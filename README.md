@@ -260,10 +260,70 @@ Conjuntos o colecciones de datos que permiten orgenizarlos, manipularlos, extrae
 
 ### Listas
 
-Se definen entre corchetes. Permite duplicados. Ordenado. Mutable.
+Se definen entre corchetes. Permite duplicados. Ordenado, mantiene el orden en el que fue definida. Mutable. Puede contener todo tipo de datos.
 
 ```python
-nums = [1, 2, 3]
+lista = [1, True, 2, "Juan", 3.0]
+```
+
+Acceder a un elementos a través de su índice
+
+```python
+lista[0] # 1
+```
+
+Longitud de la lista
+
+```python
+len(lista) # 5
+```
+
+Último elemento índice negativo
+
+```python
+lista[-1] # 3.0
+```
+
+Primer elemento índice negativo
+
+```python
+lista[-len(lista)] # 1
+```
+
+Acceder a una parte de la lista `a:b`, `a` el primer elemento, `b` el elemento siguiente al último que se quiere acceder.
+
+```python
+lista[1:3] # [True, 2]
+```
+
+Lista anidada
+
+```python
+lista_anidada = [lista, False, 4, "Carlos", 1.0] # [[1, True, 2, 'Juan', 3.0], False, 4, 'Carlos', 1.0]
+```
+
+Acceder a un elemento de una lista anidada
+
+```python
+lista_anidada[0][1] # True
+```
+
+Modificar un elemento
+
+```python
+lista[3] = "Juan Carlos" # [1, True, 2, 'Juan Carlos', 3.0]
+```
+
+Añadir elemento en la última posición
+
+```python
+lista.append(False) # [1, True, 2, 'Juan Carlos', 3.0, False]
+```
+
+Agregar elementos de un iterable
+
+```python
+lista.extend(["Batman", 13, True]) # [1, True, 2, 'Juan Carlos', 3.0, False, 'Batman', 13, True]
 ```
 
 ### Tuplas
