@@ -12,6 +12,8 @@
 - [Operadores lógicos](#operadores-logicos)
 - [Funciones incorporadas](#funciones-incorporadas)
 - [Estructura de datos](#estructura-de-datos)
+- [Condicionales](#condicionales)
+- [Ciclos](#ciclos)
 
 ## Comentarios
 
@@ -416,4 +418,99 @@ Vaciar el set
 
 ```python
 set_test.clear()
+```
+
+## Condicionales
+
+Instrucción que se ejecuta o no al cumplirse una condición. Dependen de una condición lógica.
+
+### Condiciones lógicas
+
+- Igual `==`
+- Diferente `!=`
+- Menor `<`
+- Mayor `>`
+- Menor o igual que `<=`
+- Mayor o igual que `>=`
+- `is`
+- `and`
+- `or`
+- `not`
+
+Retornan `True` o `False`
+
+```mermaid
+flowchart TD;
+    A{Condición}--No se cumple---B[Bloque else]
+    A--Se cumple---C[Bloque if]
+    B-->D[Instrucción]
+    C-->D[Instrucción]
+```
+
+```python
+if <condición lógica>:
+    print("if block")
+elif <cóndición lógica>:
+    print("Elif block")
+else:
+    print("Else block")
+```
+
+## Ciclos
+
+Instrucción que se repite hasta que se cumple una condición.
+
+### Instrucciones que modifican el flujo de los ciclos
+
+- `break`: Termina el ciclo.
+- `continue`: Pasa al siguiente elemento.
+
+### Tipos de ciclos
+
+- For
+- While
+
+```mermaid
+flowchart LR
+    A[Instrucción]-->B{{¿Repetir?}}
+    B--Se cumple-->A
+    B--No se cumple-->D[Instrucción]
+```
+
+#### For
+
+Itera sobre cada elemento de una estructura de datos.
+
+```python
+for <element> in <object>:
+    print("Elemento:" <element>)
+```
+
+Iterar sobre un rango de números, desde el primero número indicado hasta el anteúltimo indicado. Si se indica un solo número es desde el 0 hasta el anteúltimo indicado.
+
+```python
+for element in range(10):
+    print(element)
+```
+
+Iterar sobre un diccionario
+
+```python
+person = {
+    "name": "Juan",
+    "age": 30
+}
+
+for key in person:
+    print("Clave", key)
+    print("Valor", person[key])
+```
+
+#### While
+
+Ejecuta una o más instrucciones mientras se cumpla una condición.
+
+```python
+while <condición>:
+    print("Ciclo While")
 ```
