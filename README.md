@@ -328,18 +328,49 @@ lista.extend(["Batman", 13, True]) # [1, True, 2, 'Juan Carlos', 3.0, False, 'Ba
 
 ### Tuplas
 
-Se definen entre paréntesis. Permite duplicados. Ordenado. No es mutable.
+Se definen entre paréntesis o elementos separados por coma. Permiten duplicados. Ordenadas. No son mutables. Se utilizan cuando sus valores no se deben modificar o si se requiere menor tiempo de procesamiento.
 
 ```python
 nums = (1, 2, 3)
+nums = 1, 2, 3
 ```
 
 ### Diccionarios
 
-Se definen entre llaves. Cada elementos es una combinación de una clave y un valor. No es ordenado. Mutable. No permite duplicados.
+Se definen entre llaves. Cada elementos es una combinación de una clave y un valor. No es ordenado. Mutable. No permite duplicados. Las claves son únicas. Las claves y valores pueden ser de cualquier tipo de dato.
 
 ```python
-person = {name: "Juan", age: 30}
+person = {"name": "Juan", "age": 30}
+```
+
+Acceder al valor de una clave
+
+```python
+person["name"] # Juan
+```
+
+Agregar clave y valor
+
+```python
+person["height"] = 1.7
+```
+
+Acceder a todas las claves y valores
+
+```python
+person.items() # dict_items([('name', 'Juan'), ('age', 30), ('height', 1.7)])
+```
+
+Acceder a las claves
+
+```python
+person.keys() # dict_keys(['name', 'age', 'height'])
+```
+
+Acceder a los valores
+
+```python
+person.values() # dict_values(['Juan', 30, 1.7])
 ```
 
 ### Sets
@@ -347,5 +378,42 @@ person = {name: "Juan", age: 30}
 Se definen entre llaves. No permite duplicados. No es ordenado. Mutable.
 
 ```python
-set = {1, 2, 3, 3} # {1, 2, 3}
+set_test = {1, 2, 3, 3} # {1, 2, 3}
+```
+
+Agregar un elemento
+
+```python
+set_test.add(4)
+```
+
+Agregar varios elementos
+
+```python
+set_test.update(["uno", "dos", "tres"])
+```
+
+Obtener la cantidad de elementos
+
+```python
+len(set_test) # 7
+```
+
+Eliminar un elemento
+
+```python
+set_test.discard("dos")
+```
+
+```python
+set_test.remove("uno")
+```
+
+> [!WARNING]
+> Arroja un error si el elemento no existe.
+
+Vaciar el set
+
+```python
+set_test.clear()
 ```
