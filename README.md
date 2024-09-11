@@ -6,6 +6,8 @@
 
 - [Comentarios](#comentarios)
 - [Variables](#variables)
+- [Operadores matemáticos](#operadores-matematicos)
+- [Operadores lógicos](#operadores-logicos)
 
 ### Comentarios
 
@@ -77,4 +79,98 @@ height = 1.70
 ```python
 positive = True
 negative = False
+```
+
+### Operadores matemáticos
+
+#### Suma
+
+```python
+2 + 2
+```
+
+#### Resta
+
+```python
+2 - 2
+```
+
+#### Multiplicación
+
+```python
+2 * 2
+```
+
+#### División
+
+```python
+2 / 2
+```
+
+El resultado de las divisiones siempre es un número decimal.
+
+#### Módulo
+
+```python
+2 % 2
+```
+
+#### Potencia
+
+```python
+2 ** 2
+```
+
+El primer número es la base y el segundo número es la potencia.
+
+#### Concatenar texto
+
+```python
+"Hola" + "Mundo" # HolaMundo
+```
+
+#### Multiplicar texto
+
+```python
+"Hola" * 2 # HolaHola
+```
+
+### Operadores lógicos
+
+Devuelve `True` o `False`
+
+#### Mayor
+
+```python
+1 > 2
+```
+
+#### Menor
+
+```python
+1 < 2
+```
+
+#### Mayor o igual
+
+```python
+1 >= 2
+```
+
+#### Menor o igual
+
+```python
+1 <= 2
+```
+
+#### Comparación de igualdad
+
+```python
+1 == 2
+```
+
+#### Comparación de diferencia
+
+```python
+1 != 2
 ```
