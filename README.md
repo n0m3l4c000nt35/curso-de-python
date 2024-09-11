@@ -81,7 +81,7 @@ positive = True
 negative = False
 ```
 
-### Operadores matemáticos
+### Operadores matematicos
 
 #### Suma
 
@@ -135,7 +135,7 @@ El primer número es la base y el segundo número es la potencia.
 "Hola" * 2 # HolaHola
 ```
 
-### Operadores lógicos
+### Operadores logicos
 
 Devuelve `True` o `False`
 
