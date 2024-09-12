@@ -15,7 +15,7 @@
 - [Condicionales](#condicionales)
 - [Ciclos](#ciclos)
 - [Funciones](#funciones)
-- [Módulos](#modulos)
+- [Módulos y paquetes](#modulos)
 
 ## Comentarios
 
