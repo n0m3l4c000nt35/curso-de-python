@@ -6,7 +6,7 @@
 
 [Paquetes](https://pypi.org/)
 
-## Índice
+## Indice
 
 - [Comentarios](#comentarios)
 - [Variables](#variables)
@@ -25,7 +25,7 @@
 - [Entorno virtual](#entorno-virtual)
 - [Errores/Excepciones](#errores-excepciones)
 
-## Comentarios
+## Comentarios [↑Indice↑](#indice)
 
 Los comentarios son líneas de código no ejecutadas por el programa.
 
@@ -45,7 +45,7 @@ multilínea
 """
 ```
 
-## Variables
+## Variables [↑Indice↑](#indice)
 
 Objeto con un valor almacenado en memoria que puede cambiar con el tiempo. Se definen con un nombre. Se pone un signo `=` para indicar que se le asigna un valor y se le asigna el valor. No se requiere definir el tipo de dato.
 
@@ -97,7 +97,7 @@ positive = True
 negative = False
 ```
 
-## Operadores matematicos
+## Operadores matematicos [↑Indice↑](#indice)
 
 ### Suma
 
@@ -151,7 +151,7 @@ El primer número es la base y el segundo número es la potencia.
 "Hola" * 2 # HolaHola
 ```
 
-## Operadores logicos
+## Operadores logicos [↑Indice↑](#indice)
 
 Devuelve `True` o `False`
 
@@ -191,7 +191,7 @@ Devuelve `True` o `False`
 1 != 2 # True
 ```
 
-## Funciones incorporadas
+## Funciones incorporadas [↑Indice↑](#indice)
 
 ### int
 
@@ -261,7 +261,7 @@ class int(object)
 -- Más  --"""
 ```
 
-## Estructura de datos
+## Estructura de datos [↑Indice↑](#indice)
 
 Conjuntos o colecciones de datos que permiten orgenizarlos, manipularlos, extraerlos, buscarlos o insertarlos. Son eficientes. Pueden modificarse después de ser creados (mutables).
 
@@ -430,7 +430,7 @@ Vaciar el set
 set_test.clear()
 ```
 
-## Condicionales
+## Condicionales [↑Indice↑](#indice)
 
 Instrucción que se ejecuta o no al cumplirse una condición. Dependen de una condición lógica.
 
@@ -466,7 +466,7 @@ else:
     print("Else block")
 ```
 
-## Ciclos
+## Ciclos [↑Indice↑](#indice)
 
 Instrucción que se repite hasta que se cumple una condición.
 
@@ -525,7 +525,7 @@ while <condición>:
     print("Ciclo While")
 ```
 
-## Funciones
+## Funciones [↑Indice↑](#indice)
 
 Bloques de código independientes con instrucciones relacionadas entre sí encargadas de cumplir una tarea. Organizan el código en partes pequeñas. Permite la organización y usabilidad del código. Evita la repitición de instrucciones y permite reutilizarlo.
 
@@ -587,7 +587,7 @@ def <nombre_funcion>():
     return <valor_retorno1>, <valor_retorno2>, <valor_retorno3>
 ```
 
-## Modulos
+## Modulos [↑Indice↑](#indice)
 
 Librerías adicionales al código base de Python que contienen funciones. Los módulos hacen referencia a archivos de Python que pueden contener una o varias funciones. Las librerías son paquetes desarrollados por la comunidad.
 
@@ -609,14 +609,14 @@ Importar submódulo
 from <módulo> import <submódulo>
 ```
 
-## Paquetes
+## Paquetes [↑Indice↑](#indice)
 
 Los paquetes son carpetas que contienen módulos. Los paquetes deben contener un archivo de inicialización init.
 
 - Crear carpeta
 - Crear archivo `__init__.py`, dejarlo vacío. El archivo le indica a Python que la carpeta creada es un paquete y sus archivos son módulos.
 
-## Programacion orientada a objetos
+## Programacion orientada a objetos [↑Indice↑](#indice)
 
 Paradigma de programación. Todos los datos son objetos. Permite modelar cosas de la vida real. Los objetos son elementos o instancias creadas a partir de una clase. Los objetos tienen atributos y métodos. Los atributos son características que definen al objeto. Los métodos son las funciones que tiene un objeto.
 
@@ -625,7 +625,7 @@ Paradigma de programación. Todos los datos son objetos. Permite modelar cosas d
 - Herencia: Crear el plano de un objeto hijo a partir del plano de un objeto padre. Comparten características y funciones.
 - Polimorfismo: Hace referencia a cada objeto creado a partir del mismo plano y responde de manera diferente ante una función.
 
-## Clases
+## Clases [↑Indice↑](#indice)
 
 Plano a partir del que se crean objetos. El nombre de la clase en mayúscula.
 
@@ -728,7 +728,7 @@ paco.trabajar(horas_trabajadas=8)
 paco.cumplir_anios()
 ```
 
-## Librerias
+## Librerias [↑Indice↑](#indice)
 
 Instalar librería
 
@@ -754,7 +754,7 @@ Desinstalar librería
 pip uninstall pandas
 ```
 
-## Entorno virtual
+## Entorno virtual [↑Indice↑](#indice)
 
 Entorno aislado para cada proyecto que se desarrolla. Contienen los paquetes necesarios para el proyecto. Permite el manejo de paquetes y versiones entre proyectos. Facilidad para borrar paquetes en caso de conflictos.
 
@@ -787,7 +787,7 @@ Instalar librerías requeridas
 pip install -r requirements.txt
 ```
 
-## Errores Excepciones
+## Errores Excepciones [↑Indice↑](#indice)
 
 - Errores de sintaxis: Ocurre cuando una instrucción está mal escrita. Se identifica si aparece `SyntaxError`.
 - Excepciones: Ocurren cuando se genera un error aunque la sintaxis este escrita correctamente. Ocurren durante la ejecución del programa. Pueden programarse usando la instrucción `Raise Exception` cuando queremos que el código termine en un error.
