@@ -4,6 +4,8 @@
 
 [Guía de estilo - PEP 8](https://peps.python.org/)
 
+[Paquetes](https://pypi.org/)
+
 ## Índice
 
 - [Comentarios](#comentarios)
@@ -19,6 +21,9 @@
 - [Paquetes](#paquetes)
 - [Programación orientada a objetos](#programacion-orientada-a-objetos)
 - [Clases](#clases)
+- [Librerías](#librerias)
+- [Entorno virtual](#entorno-virtual)
+- [Errores/Excepciones](#errores-excepciones)
 
 ## Comentarios
 
@@ -627,4 +632,204 @@ Plano a partir del que se crean objetos. El nombre de la clase en mayúscula.
 ```python
 class NombreClase:
     pass
+```
+
+Los valores iniciales del objeto se definen en el método **init** que es el constructor de la clase que se ejecuta cuando se crea el objeto. El constructor y todos los métodos de la clase reciben como primer parámetro **self** que representa la instancia de la clase.
+
+```python
+class NombreClase:
+    def __init__(self):
+        print("SELF")
+```
+
+### Tipos de atributos
+
+- Atributos de instancia: Se definen dentro de la función **init**.
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+person = Person("Juan", 30)
+```
+
+Acceder a un atributo
+
+```python
+person.name
+person.age
+```
+
+- Atributos de clase
+
+```python
+class Person:
+    god = True
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+person = Person("Juan", 30)
+
+person.god
+```
+
+### Métodos de clase
+
+Funciones que se definen dentro de una clase. Recibe como primer atributo **self**.
+
+```python
+class Persona:
+
+    god = True
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.dead = False
+
+    def die(self):
+        self.dead = True
+
+person = Person("Juan", 30)
+person.die()
+```
+
+### Herencia de clase
+
+Permite crear una clase a partir de otra. La clase secundaria aprovecha atributos y métodos de la principal para reutilizar código existente. Hereda el constructor de la clase padre. Para conservar los atributos de la clase padre se usa la función `super` dentro del constructor.
+
+```python
+class Persona:
+
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def cumplir_anios(self):
+        self.edad += 1
+        print(f"Feliz cumpleaños #{self.edad} {self.nombre}")
+
+class Empleado(Persona):
+
+    def __init__(self, horas_totales, nombre, edad):
+        super(Empleado, self).__init__(nombre, edad)
+        self.horas_totales = horas_totales
+
+    def trabajar(self, horas_trabajadas):
+        self.horas_totales += horas_trabajadas
+        print(f"Usted ha trabajado {horas_trabajadas} horas")
+        print(f"Horas totales: {self.horas_totales}")
+
+paco = Empleado(nombre="Paco", edad=20, horas_totales=30)
+paco.trabajar(horas_trabajadas=8)
+paco.cumplir_anios()
+```
+
+## Librerias
+
+Instalar librería
+
+```
+pip install flask
+```
+
+Instalar una versión en particular
+
+```
+pip install pandas==1.3.4
+```
+
+Listar librerías instaladas
+
+```
+pip freeze
+```
+
+Desinstalar librería
+
+```
+pip uninstall pandas
+```
+
+## Entorno virtual
+
+Entorno aislado para cada proyecto que se desarrolla. Contienen los paquetes necesarios para el proyecto. Permite el manejo de paquetes y versiones entre proyectos. Facilidad para borrar paquetes en caso de conflictos.
+
+### Crear entorno virtual
+
+- virtualenv
+
+```powershell
+pip install virtualenv
+virtualenv env
+env\Scripts\activate # Activar el entorno
+deactivate # Desactivar el entorno
+rmdir env /s # Eliminar el entorno
+```
+
+- venv
+- anaconda
+
+### Archivo de requerimientos
+
+Archivo de texto plano que contiene todas las librerías que se requieren para un proyecto. El standard para la creación del archivo es `requirements.txt`.
+
+```
+flask==2.0.2
+```
+
+Instalar librerías requeridas
+
+```
+pip install -r requirements.txt
+```
+
+## Errores Excepciones
+
+- Errores de sintaxis: Ocurre cuando una instrucción está mal escrita. Se identifica si aparece `SyntaxError`.
+- Excepciones: Ocurren cuando se genera un error aunque la sintaxis este escrita correctamente. Ocurren durante la ejecución del programa. Pueden programarse usando la instrucción `Raise Exception` cuando queremos que el código termine en un error.
+
+```python
+def validar_x(x):
+    if x < 1:
+        raise Exception("La variable x debe ser mayor a 1")
+    else:
+        print("x es mayor a 1")
+
+x = 0.3
+validar_x(x)
+```
+
+### Assertion errors
+
+Errores que pueden levantarse al cumplirse una condición, no es necesario escribir explícitamente la condición. El assert valida la condición y si no se cumple levanta el error.
+
+```python
+def calcular_promedio(lista):
+    assert len(lista) > 0, "La lista está vacía"
+    return sum(lista) / len(lista)
+
+promedio = calcular_promedio(lista=[])
+```
+
+### Capturar errores con try except
+
+Dentro del bloque `try` se encuenta el código que debe ejecutarse para completar el programa. Dentro del bloque `except` se encuentran las instrucciones que se ejecutan cuando algo dentro del bloque `try` falla.
+
+```python
+def calcular_promedio(lista):
+    assert len(lista) > 0, "La lista está vacía"
+    return sum(lista) / len(lista)
+
+try:
+    promedio = calcular_promedio(lista=[])
+    print(promedio)
+except AssertionError as assert_error:
+    print(assert_error)
+except Exception as e:
+    print("La función no calculó el promedio")
+    print(e)
 ```
