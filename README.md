@@ -594,6 +594,21 @@ for nombre, apellido in zip(nombres, apellidos):
     print(nombre, apellido)
 ```
 
+#### enumerate()
+
+Recibe un objeto iterable y retorna tuplas, cada una contiene un elemento del objeto que recibe y un índice que indica su posición.
+
+`enumerate(iterable, start=0)`
+
+```python
+nombres = ["Paco", "Emilio", "Javier", "Ana"]
+nombres_enumerados = enumerate(nombres, start=5)
+print(list(nombres_enumerados))
+
+for indice, elemento in enumerate(nombres):
+    print(indice, elemento)
+```
+
 ### Iteradores
 
 Objetos. Permiten recorrer un objeto iterable. Objeto que permite obtener de un objeto iterable cada uno de los elementos que lo componen.
