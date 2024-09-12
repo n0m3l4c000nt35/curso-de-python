@@ -693,6 +693,8 @@ def <nombre_funcion>():
 
 ## Funcion lambda
 
+[Indice](#indice)
+
 Se compone de una sola expresión. Toma uno o más argumentos. Tareas simples. Que no se repitan mucho. Funciones anónimas.
 
 ```python
