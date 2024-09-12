@@ -14,6 +14,8 @@
 - [Estructura de datos](#estructura-de-datos)
 - [Condicionales](#condicionales)
 - [Ciclos](#ciclos)
+- [Funciones](#funciones)
+- [Módulos](#modulos)
 
 ## Comentarios
 
@@ -514,3 +516,67 @@ Ejecuta una o más instrucciones mientras se cumpla una condición.
 while <condición>:
     print("Ciclo While")
 ```
+
+## Funciones
+
+Bloques de código independientes con instrucciones relacionadas entre sí encargadas de cumplir una tarea. Organizan el código en partes pequeñas. Permite la organización y usabilidad del código. Evita la repitición de instrucciones y permite reutilizarlo.
+
+```python
+def <nombre_funcion>(param1, param2):
+    <instrucción>
+    return <valor_retorno>
+
+<nombre_funcion>(arg1, arg2)
+<nombre_funcion>(param1=arg1, param2=arg2)
+valor_retorno = <nombre_funcion>()
+```
+
+Devolver más de un valor separados por una coma
+
+```python
+def <nombre_funcion>():
+    <instrucción>
+    return <valor_retorno1>, <valor_retorno2>, <valor_retorno3>
+
+valores_retorno = <nombre_funcion>()
+# (valor_retorno1, valor_retorno2, valor_retorno3)
+
+valor_retorno1, valor_retorno2, valor_retorno3 = <nombre_funcion>()
+# valor_retorno1, valor_retorno2, valor_retorno3
+```
+
+### Tipos de funciones
+
+- Built-in functions: Creadas para tareas comunes sin necesidad de instalación.
+- User-defined functions: Creadas por los desarrolladores para cada proyecto.
+
+### Documentar función / docstring
+
+- Docstring corta:
+
+```python
+def <nombre_funcion>():
+    """Descripción de la función"""
+    <instrucción>
+    return <valor_retorno1>, <valor_retorno2>, <valor_retorno3>
+```
+
+- Docstring larga:
+
+```python
+def <nombre_funcion>():
+    """Descripción de la función
+
+    Descripción larga y detallada
+
+    Args:
+        param1 (int): descripción arg1
+        param2 (int): descripción arg2
+    Return:
+        valor_retorno (int): descripción valor_retorno
+    """
+    <instrucción>
+    return <valor_retorno1>, <valor_retorno2>, <valor_retorno3>
+```
+
+## Modulos y paquetes
