@@ -513,6 +513,17 @@ for <element> in <object>:
     print("Elemento:" <element>)
 ```
 
+Ejecutar líneas de código después de iterar sobre todos los elementos si no se sale del ciclo antes.
+
+```python
+lista_nombres = ["Paco", "Emilio", "Javier", "Ana"]
+
+for nombre in lista_nombres:
+    print(nombre)
+else:
+    print("Ciclo terminado")
+```
+
 Iterar sobre un rango de números `range(inicio, fin, paso)`
 
 Desde el primero número indicado hasta el anteúltimo indicado. Si se indica un solo número es desde el 0 hasta el anteúltimo indicado.
@@ -622,6 +633,20 @@ Objetos. Permiten recorrer un objeto iterable. Objeto que permite obtener de un 
 numeros = [1, 2, 3]
 iterador = iter(numeros)
 next(iterador)
+```
+
+#### map()
+
+Retorna un objeto de tipo map. Aplica una función a cada elemento de la lista que recibe.
+
+```python
+def calcular_cuadrado(numero):
+    return numero ** 2
+
+lista_num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+map_cuadrados = list(map(calcular_cuadrado, lista_num))
+print(map_cuadrados)
 ```
 
 ## Funciones
