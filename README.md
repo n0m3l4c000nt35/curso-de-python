@@ -567,6 +567,33 @@ Conjunto de elementos. Permiten retornar los elementos que los componen. Se reco
 - Tuplas
 - Diccionarios
 
+#### zip()
+
+Crea un objeto iterable. Es una tupla creada a partir de otros objetos iterables. Une uno o más iterables y cada unión de elementos resulta en una tupla. Si se unen dos iterables de distintos tamaños, el resultado va a contener la cantidad de tuplas con el iterable de menos elementos.
+
+```python
+nombres = ["Paco", "Emilio", "Javier"]
+apellidos = ["Botero", "Tafur", "Quiñonez"]
+
+nombre_completo = list(zip(nombres, apellidos))
+print(nombre_completo) # [('Paco', 'Botero'), ('Emilio', 'Tafur'), ('Javier', 'Quiñonez')]
+```
+
+Desempaquetar lista o iterables de tuplas
+
+```python
+nombres_unzip, apellidos_unzip = zip(*nombre_completo)
+print(nombres_unzip)
+print(apellidos_unzip)
+```
+
+Iterar sobre dos objetos iterables
+
+```python
+for nombre, apellido in zip(nombres, apellidos):
+    print(nombre, apellido)
+```
+
 ### Iteradores
 
 Objetos. Permiten recorrer un objeto iterable. Objeto que permite obtener de un objeto iterable cada uno de los elementos que lo componen.
