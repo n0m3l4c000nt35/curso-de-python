@@ -15,7 +15,10 @@
 - [Condicionales](#condicionales)
 - [Ciclos](#ciclos)
 - [Funciones](#funciones)
-- [Módulos y paquetes](#modulos-y-paquetes)
+- [Módulos](#modulos)
+- [Paquetes](#paquetes)
+- [Programación orientada a objetos](#programacion-orientada-a-objetos)
+- [Clases](#clases)
 
 ## Comentarios
 
@@ -579,4 +582,49 @@ def <nombre_funcion>():
     return <valor_retorno1>, <valor_retorno2>, <valor_retorno3>
 ```
 
-## Modulos y paquetes
+## Modulos
+
+Librerías adicionales al código base de Python que contienen funciones. Los módulos hacen referencia a archivos de Python que pueden contener una o varias funciones. Las librerías son paquetes desarrollados por la comunidad.
+
+### Importar librerías, módulos
+
+```python
+import <módulo>
+```
+
+Simplificar nombre
+
+```python
+import <módulo> as md
+```
+
+Importar submódulo
+
+```python
+from <módulo> import <submódulo>
+```
+
+## Paquetes
+
+Los paquetes son carpetas que contienen módulos. Los paquetes deben contener un archivo de inicialización init.
+
+- Crear carpeta
+- Crear archivo `__init__.py`, dejarlo vacío. El archivo le indica a Python que la carpeta creada es un paquete y sus archivos son módulos.
+
+## Programacion orientada a objetos
+
+Paradigma de programación. Todos los datos son objetos. Permite modelar cosas de la vida real. Los objetos son elementos o instancias creadas a partir de una clase. Los objetos tienen atributos y métodos. Los atributos son características que definen al objeto. Los métodos son las funciones que tiene un objeto.
+
+- Abstracción: Define características y funcionalidades de un objeto. Plano a partir del que se crea un objeto.
+- Encapsulamiento: Evita que los objetos se manipulen de manera incorrecta.
+- Herencia: Crear el plano de un objeto hijo a partir del plano de un objeto padre. Comparten características y funciones.
+- Polimorfismo: Hace referencia a cada objeto creado a partir del mismo plano y responde de manera diferente ante una función.
+
+## Clases
+
+Plano a partir del que se crean objetos. El nombre de la clase en mayúscula.
+
+```python
+class NombreClase:
+    pass
+```
