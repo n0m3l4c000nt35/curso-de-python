@@ -571,6 +571,19 @@ print(triangulo)
 
 - **\*\*kwargs**: Keyword arguments. Parámetros especiales usados en las funciones para pasar parámetros opcionales en forma de diccionario. Cada parámetro tiene un nombre asignado que sería la clave del diccionario y un valor asociado. Cuando queremos definir parámetros no definidos dentro de la función.
 
+```python
+def funcion_kwargs(**kwargs):
+    print(kwargs)
+    for clave, valor in kwargs.items():
+        print(f"Clave: {clave} - Valor: {valor}")
+    print(kwargs["nombre"], kwargs["apellido"])
+
+
+funcion_kwargs(nombre="Juan Carlos", apellido="Batman")
+```
+
+- **Retorno**: Elemento que regresa la función como resultado del proceso o tarea que realiza.
+
 Orden de parámetros
 
 1. Parámetros definidos desde la función
@@ -584,19 +597,6 @@ def parametros_ordenados(nombre, apellido, *args, **kwargs):
 def parametros_desordenados(nombre, apellido, **kwargs, *args):
     pass
 ```
-
-```python
-def funcion_kwargs(**kwargs):
-    print(kwargs)
-    for clave, valor in kwargs.items():
-        print(f"Clave: {clave} - Valor: {valor}")
-    print(kwargs["nombre"], kwargs["apellido"])
-
-
-funcion_kwargs(nombre="Juan Carlos", apellido="Batman")
-```
-
-- **Retorno**: Elemento que regresa la función como resultado del proceso o tarea que realiza.
 
 ```python
 def <nombre_funcion>(param1, param2):
