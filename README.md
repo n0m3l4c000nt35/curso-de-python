@@ -17,6 +17,7 @@
 - [Condicionales](#condicionales)
 - [Ciclos](#ciclos)
 - [Funciones](#funciones)
+- [Función lambda](#funcion-lambda)
 - [Módulos](#modulos)
 - [Paquetes](#paquetes)
 - [Programación orientada a objetos](#programacion-orientada-a-objetos)
@@ -666,6 +667,58 @@ def <nombre_funcion>():
     return <valor_retorno1>, <valor_retorno2>, <valor_retorno3>
 ```
 
+## Funcion lambda
+
+Se compone de una sola expresión. Toma uno o más argumentos. Tareas simples. Que no se repitan mucho. Funciones anónimas.
+
+```python
+lambda argumentos: expresión
+```
+
+- `lambda`: Sentencia que invoca la función.
+- `argumentos`: Argumentos que recibe la función.
+- `expresión`: Cuerpo de la función.
+
+Desde la terminal
+
+```python
+lambda num: num*2
+_(2,)
+
+(lambda num: num*2)(2,)
+
+multiplicacion = lambda num: num*2
+multiplicacion(2)
+```
+
+Reemplazar función convencional por lambda
+
+```python
+def calcular_area_cuadrado(lado):
+    return lado ** 2
+
+calcular_cuadrado = lambda lado: lado ** 2
+print(calcular_cuadrado(2))
+```
+
+Uso con la función `filter`
+
+```python
+lista_numeros = [1, 2, 3, 4, 5, 6, 7, 8]
+
+lista_pares =list(filter(lambda numero: numero % 2 == 0, lista_numeros ))
+print(lista_pares)
+```
+
+Uso con la función `map`
+
+```python
+lista_numeros = [1, 2, 3, 4, 5, 6, 7, 8]
+
+nueva_lista =list(map(lambda numero: numero * 10, lista_numeros))
+print(nueva_lista)
+```
+
 ## Modulos
 
 [Indice](#indice)
@@ -925,4 +978,8 @@ except AssertionError as assert_error:
 except Exception as e:
     print("La función no calculó el promedio")
     print(e)
+```
+
+```
+
 ```
