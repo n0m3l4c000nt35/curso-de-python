@@ -547,6 +547,57 @@ while <condición>:
 
 Bloques de código independientes con instrucciones relacionadas entre sí encargadas de cumplir una tarea. Organizan el código en partes pequeñas. Permite la organización y usabilidad del código. Evita la repitición de instrucciones y permite reutilizarlo.
 
+- **Parámetro**: Variables que referencian a los datos que ingresan a la función. El parámetro es el nombre de la variable.
+- **Argumento**: Valores asignados a cada uno de los parámetros de la función cuando la función se ejecuta.
+- **\*args**:Non-keyword arguments. Parámetros especiales usados para pasar parámetros opcionales en forma de lista. Cada posición en la lista de ese parámetro será usado en la función.
+
+```python
+def calcular_perimetro(lado_1, lado_2, lado_3, lado_4):
+    perimetro = lado_1 + lado_2 + lado_3 + lado_4
+    return perimetro
+
+def calcular_perimetro(*args):
+    perimetro = 0
+    for lado in args:
+        perimetro += lado
+    return perimetro
+
+perimetro = calcular_perimetro(1, 2, 3, 4)
+print(perimetro)
+
+triangulo = calcular_perimetro(1, 2, 3)
+print(triangulo)
+```
+
+- **\*\*kwargs**: Keyword arguments. Parámetros especiales usados en las funciones para pasar parámetros opcionales en forma de diccionario. Cada parámetro tiene un nombre asignado que sería la clave del diccionario y un valor asociado. Cuando queremos definir parámetros no definidos dentro de la función.
+
+Orden de parámetros
+
+1. Parámetros definidos desde la función
+2. args
+3. kwargs
+
+```python
+def parametros_ordenados(nombre, apellido, *args, **kwargs):
+    pass
+
+def parametros_desordenados(nombre, apellido, **kwargs, *args):
+    pass
+```
+
+```python
+def funcion_kwargs(**kwargs):
+    print(kwargs)
+    for clave, valor in kwargs.items():
+        print(f"Clave: {clave} - Valor: {valor}")
+    print(kwargs["nombre"], kwargs["apellido"])
+
+
+funcion_kwargs(nombre="Juan Carlos", apellido="Batman")
+```
+
+- **Retorno**: Elemento que regresa la función como resultado del proceso o tarea que realiza.
+
 ```python
 def <nombre_funcion>(param1, param2):
     <instrucción>
@@ -555,6 +606,16 @@ def <nombre_funcion>(param1, param2):
 <nombre_funcion>(arg1, arg2)
 <nombre_funcion>(param1=arg1, param2=arg2)
 valor_retorno = <nombre_funcion>()
+```
+
+```python
+def calcular_area_cuadrado(lado):
+    """Calcular el área de un cuadrado"""
+    area = lado * lado
+    return area
+
+area_cuadrado = calcular_area_cuadrado(lado=5)
+print(area_cuadrado)
 ```
 
 Devolver más de un valor separados por una coma
