@@ -513,7 +513,23 @@ for <element> in <object>:
     print("Elemento:" <element>)
 ```
 
-Iterar sobre un rango de números, desde el primero número indicado hasta el anteúltimo indicado. Si se indica un solo número es desde el 0 hasta el anteúltimo indicado.
+Iterar sobre un rango de números `range(inicio, fin, paso)`
+
+Desde el primero número indicado hasta el anteúltimo indicado. Si se indica un solo número es desde el 0 hasta el anteúltimo indicado.
+
+```python
+serie_1 = range(5)
+print(serie_1) # range(0, 5)
+print(list(serie_1)) # [0, 1, 2, 3, 4]
+
+serie_2 = range(5, 10)
+print(serie_2) # range(5, 10)
+print(list(serie_2)) # [5, 6, 7, 8, 9]
+
+serie_3 = range(3, 10, 2)
+print(serie_3) # range(3, 10, 2)
+print(list(serie_3)) # [3, 5, 7, 9]
+```
 
 ```python
 for element in range(10):
