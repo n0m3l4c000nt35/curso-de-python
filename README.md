@@ -542,6 +542,30 @@ while <condición>:
     print("Ciclo While")
 ```
 
+### Iterables
+
+Conjunto de elementos. Permiten retornar los elementos que los componen. Se recorren usando ciclos para obtener sus elementos.
+
+- Cadenas de texto
+- Listas
+- Tuplas
+- Diccionarios
+
+### Iteradores
+
+Objetos. Permiten recorrer un objeto iterable. Objeto que permite obtener de un objeto iterable cada uno de los elementos que lo componen.
+
+#### Crear iteradores
+
+- La función `iter()` permite recorrer el iterable.
+- La función `next()` retorna el elemento siguiente en el iterable.
+
+```python
+numeros = [1, 2, 3]
+iterador = iter(numeros)
+next(iterador)
+```
+
 ## Funciones
 
 [Indice](#indice)
