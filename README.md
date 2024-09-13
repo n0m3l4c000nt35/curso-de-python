@@ -26,6 +26,7 @@
 - [Entorno virtual](#entorno-virtual)
 - [Errores/Excepciones](#errores-excepciones)
 - [List comprehension](#list-comprehension)
+- [Archivos CSV](#archivos-csv)
 
 ## Comentarios
 
@@ -1205,4 +1206,84 @@ for elemento in lista_anidada:
     for numero in elemento:
         valores_lista.append(numero)
 print(valores_lista)
+```
+
+## Archivos CSV
+
+Los datos representan tablas. Cada valor separado por una coma pertenece a una columna. Cada línea es una fila.
+
+```
+pais,capital
+Colombia,Bogotá
+España,Madrid
+Argentina, Buenos Aires
+```
+
+```
+nombre,apellido,edad
+Paco,Botero,26
+Javier,Quiñonez,24
+Emilio,Tafur,25
+```
+
+Crear archivos csv
+
+```python
+import csv
+import os
+
+columnas = ["nombre", "apellido", "edad"]
+dato = ["Paco", "Botero", 26]
+
+datos_lista = [
+    ["Paco", "Botero", 26],
+    ["Javier", "Quiñonez", 24],
+    ["Emilio", "Tafur", 25]
+]
+
+datos_dict = [
+    {"nombre": "Paco", "apellido": "Botero", "edad": 26},
+    {"nombre": "Javier", "apellido": "Quiñonez", "edad": 24},
+    {"nombre": "Emilio", "apellido": "Tafur", "edad": 25}
+]
+
+ruta = "csv_vacio.csv"
+ruta_absoluta = "C:\Users\Esteban\Desktop\curso-de-python"
+ruta_absoluta_os = os.path.join(os.getcwd(), ruta)
+
+print(ruta_absoluta)
+print(ruta_absoluta_os)
+
+archivo_abierto = open(ruta, "w")
+writer = csv.writer(archivo_abierto, delimiter=",")
+archivo_abierto.close()
+
+with open("datos.csv", "w", newline="") as archivo:
+    writer = csv.writer(archivo, delimiter=",")
+    writer.writerow(columnas)
+    #writer.writerow(dato)
+    writer.writerows(datos_lista)
+
+with open("datos.csv", "w", newline="") as archivo:
+    writer = csv.DictWriter(archivo, fieldnames=columnas)
+    writer.writeheader()
+    writer.writerows(datos_dict)
+```
+
+Leer archivos csv
+
+```python
+import csv
+
+with open("datos.csv", "r", encoding="UTF-8") as archivo:
+    reader = csv.reader(archivo)
+    columnas = next(reader)
+    print("Columnas", columnas)
+    for fila in reader:
+        print(fila)
+
+with open("datos.csv", "r", encoding="UTF-8") as archivo:
+    reader = csv.DictReader(archivo)
+    for fila in reader:
+        print(fila)
 ```
