@@ -1106,9 +1106,103 @@ for num in lista_num:
 
 print("Ciclo for", lista_cuadrados)
 
-lista_comprehension = [ num ** 2 for num in lista_num ]
+lista_comprehension = [num ** 2 for num in lista_num]
 print("List comprehension", lista_comprehension)
 
-lista_comprehension = [ calcular_cuadrado(num) for num in lista_num ]
+lista_comprehension = [calcular_cuadrado(num) for num in lista_num]
 print("List comprehension", lista_comprehension)
+```
+
+### List comprehension con condicional
+
+Evalua la expresión para cada uno de los elementos en el objeto iterable si se cumple una condición. Se usa cuando se tiene una sola condición a ser evaluada. `[ expresion(elemento) for elemento in objeto_iterable if condición ]`
+
+```python
+def calcular_cuadrado(numero):
+    return numero ** 2
+
+def es_par(numero):
+    return numero % 2 == 0
+
+lista_num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+lista_cuadrados = [calcular_cuadrado(num) for num in lista_num]
+print(lista_cuadrados)
+
+lista_cuadrados_pares = [calcular_cuadrado(num) for num in lista_num if es_par(num)]
+print(lista_cuadrados_pares)
+```
+
+Evaluación de la condición para cada elemento en el objeto iterable. Se evaluan dos condiciones, una con `if` y otra con `else`.
+
+```python
+lista_resultados = [calcular_cuadrado(num) if es_par(num) else f"[IMPAR] {num}" for num in lista_num]
+print(lista_resultados)
+```
+
+### Set comprehension
+
+```python
+lista_num = [1, 2, 3, 4, 5, 6, 7, 8]
+
+set_pares = {num for num in lista_num if num % 2 == 0}
+print(set_pares)
+```
+
+### Dict comprehension
+
+```python
+vocales = "aeiou"
+diccionario = {vocal.lower(): vocal.upper() for vocal in vocales}
+print(diccionario)
+```
+
+### Walrus
+
+```python
+def calcular_cuadrado(numero):
+    return numero ** 2
+
+lista_num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+lista_pares = []
+for num in lista_num:
+    # cuadrado = calcular_cuadrado(num)
+    # if cuadrado % 2 == 0:
+    if (cuadrado := calcular_cuadrado(num)) % 2 == 0:
+        lista_pares.append(cuadrado)
+        # print(f"El cuadrado de {num} es {cuadrado}, es un número par")
+    # else:
+        # print(f"El cuadrado de {num} es {cuadrado}, es un número impar")
+
+print(lista_pares)
+
+pares_comprehension = [cuadrado for num in lista_num if (cuadrado := calcular_cuadrado(num)) % 2 == 0]
+print(pares_comprehension)
+```
+
+### Cuando no usar list comprehension
+
+```python
+# Caso 1
+total = sum([num for num in range(100)])
+# Corrección
+total =sum(num for num in range(100))
+
+# Caso 2
+[print(element) for element in range(1)]
+# Corrección
+for element in range(10):
+    print(element)
+
+# Caso 3
+lista_anidada = [[1, 2], [3, 4], [5, 6]]
+valores_lista = [numero for elemento in lista_anidada for numero in elemento]
+print(valores_lista)
+# Corrección
+lista_anidada = [[1, 2], [3, 4], [5, 6]]
+valores_lista = []
+for elemento in lista_anidada:
+    for numero in elemento:
+        valores_lista.append(numero)
+print(valores_lista)
 ```
