@@ -27,6 +27,7 @@
 - [Errores/Excepciones](#errores-excepciones)
 - [List comprehension](#list-comprehension)
 - [Archivos CSV](#archivos-csv)
+- [Logging](#logging)
 
 ## Comentarios
 
@@ -1286,4 +1287,60 @@ with open("datos.csv", "r", encoding="UTF-8") as archivo:
     reader = csv.DictReader(archivo)
     for fila in reader:
         print(fila)
+```
+
+## Logging
+
+Proceso para obtener registros del programa. Permite entender el comportamiento del programa. Ayuda en la detección de errores.
+
+### Niveles de severidad
+
+- DEBUG: Se usa mientras se está desarrollando en partes del código para revisar.
+- INFO: Reporte de eventos de los que se requiere información.
+- WARNING: Reporte de algo inesperado que sucedió o va a suceder en el código.
+- ERROR: Reporte de algo que no se pudo ejecutar por un error en el código.
+- CRITICAL: Reporte de un error grave.
+
+```python
+import logging
+
+logging.basicConfig(level=logging.DEBUG, filename="example_logs.log", filemode="w", format="%(asctime)s - %(levelname)s - %(message)s", datefmt="%H:%M:%S   ")
+
+logging.debug("Log de debuggin")
+logging.info("Log informativo")
+logging.warning("Log de advertencia")
+logging.error("Log de error")
+logging.critical("Log de error crítico")
+
+try:
+    division = 2 / 0
+except:
+    logging.error("División por cero")
+    logging.exception("División por cero")
+
+logger = logging.getLogger(__name__)
+print(logger)
+
+logger.warning("Log de advertencia")
+```
+
+### Handlers
+
+```python
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+handler_consola = logging.StreamHandler()
+formato_logs = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+handler_consola.setFormatter(formato_logs)
+logger.addHandler(handler_consola)
+
+handler_archivo = logging.FileHandler("archivo.log")
+handler_archivo.setLevel(logging.ERROR)
+handler_archivo.setFormatter(formato_logs)
+logger.addHandler(handler_archivo)
+
+logger.info("Registro informativo")
 ```
